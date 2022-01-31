@@ -3,7 +3,11 @@
 //
 
 class paymentViewController: UIViewController {
-    var delegate: PaymentViewControllerDelegate
+    
+    // MARK:- Properties
+
+    internal let viewModel: PaymentViewModel
+    weak var delegate: PaymentViewControllerDelegate
     let customView = PaymentView()
     let payment: Payment?
 
@@ -26,7 +30,7 @@ class paymentViewController: UIViewController {
         setupCallbacks()
     }
 
-    internal let ViewModel: PaymentViewModel
+    
 
     func fetchPayment() {
         customView.statusText = "Fetching data"
