@@ -41,7 +41,7 @@ class PaymentViewController: UIViewController {
         ApiClient.sharedInstance().fetchPayment { payment in
             self.CustomView.isEuro = payment.currency == "EUR" ? true : false
             if payment!.amount != 0 {
-                updateView()
+                self.updateView()
                 return
             }
         }
